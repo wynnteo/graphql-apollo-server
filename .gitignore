@@ -1,0 +1,62 @@
+# .gitignore
+
+# Dependencies
+node_modules/
+
+# Environment variables
+.env
+.env.local
+.env.development
+.env.production
+
+# Build output
+dist/
+build/
+
+# Logs
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor/IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+
+# Testing
+coverage/
+.nyc_output/
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Temporary files
+.tmp/
+*.tmp
+
+# Local development databases
+*.db
+*.sqlite
+
+# Docker
+docker-compose.override.yml
+docker-compose.yml.bak
+
+# Yarn/Berry
+.yarn/*
+!.yarn/cache
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+.pnp.*
+.yarnrc.yml
+
+# Optional: Ignore local override files (if used)
+docker-compose.override.yml
