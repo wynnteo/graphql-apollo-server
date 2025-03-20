@@ -5,6 +5,9 @@
 
 A production-ready GraphQL API built with Apollo Server, Node.js, and MongoDB. Features authentication, real-time subscriptions, and optimized queries with DataLoader.
 
+**📖 [Read the full tutorial on my blog](https://yourblog.com/path-to-post)**
+
+
 ## ✨ Features
 
 - **JWT Authentication**: Secure endpoints with token-based authentication.

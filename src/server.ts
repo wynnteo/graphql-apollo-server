@@ -5,7 +5,7 @@ import express from 'express';
 import http from 'http';
 import { makeExecutableSchema } from '@graphql-tools/schema';
 import { WebSocketServer } from 'ws';
-import { useServer } from 'graphql-ws/lib/use/ws';
+import { useServer } from 'graphql-ws/use/ws';
 import { readFileSync } from 'fs';
 import path from 'path';
 import { resolvers } from './resolvers.js';

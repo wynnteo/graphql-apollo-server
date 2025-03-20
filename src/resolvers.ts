@@ -3,7 +3,7 @@ import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import { User, Post } from './database.js';
 import { pubsub } from './pubsub.js';
-
+import { PubSub } from 'graphql-subscriptions';
 const SECRET_KEY = process.env.JWT_SECRET || 'your_secret_key';
 
 export const resolvers = {
@@ -68,7 +68,7 @@ export const resolvers = {
   },
   Subscription: {
     postAdded: {
-      subscribe: () => pubsub.asyncIterator('POST_ADDED')
+      subscribe: () => (pubsub as PubSub<any>).asyncIterableIterator('POST_ADDED'), 
     }
   }
 };

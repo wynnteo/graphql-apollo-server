@@ -1,0 +1,57 @@
+#### mongodb
+
+use graphql_db
+
+db.users.insertOne({
+  name: "John Doe",
+  email: "john@example.com",
+  password: "$2y$10$r8DIMAat7vFFOtFWNT6sse50GrbTU2VNjsOnYINGhK2Jts4vEHhVK", 
+  role: "USER"
+});
+
+
+db.user.find({"_id": ObjectId('67db7b0335560bf35790a6fb')})
+
+db.posts.insertOne({
+  title: "My First Post",
+  content: "This is the content of my first post.",
+  author: ObjectId("67db7a3835560bf35790a6f9") 
+});
+
+
+
+#### graphql query
+
+mutation Login {
+  login(email: "john@example.com", password: "12345678") {
+    token
+    user { id name }
+  }
+}
+
+query GetUserWithPosts {
+  getUser(id: "67db7b0335560bf35790a6fb") {
+    name
+    posts {
+      title
+    }
+  }
+}
+
+
+### Curl
+
+curl -X POST http://localhost:4000/graphql \
+  -H "Authorization: Bearer YOUR_JWT_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "query": "mutation { 
+      createPost(input: { 
+        title: \\\"Hello\\\", 
+        content: \\\"World\\\", 
+        authorId: \\\"67db7b0335560bf35790a6fb\\\" 
+      }) { 
+        id 
+      } 
+    }"
+  }'
